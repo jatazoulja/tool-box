@@ -1,0 +1,8 @@
+.conversion-tool__input {
+  background: white;
+  border: 1px solid #cbd5e1;
+  border-radius: 0.375rem;
+  height: 3rem;
+  padding: 0 0.75rem;
+  width: 100%;
+}

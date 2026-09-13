@@ -13,7 +13,7 @@ import { developerToolCategories } from "../../utils/developer-tool-categories";
 import "./index.css";
 
 export const DeveloperToolsHome: React.FC = () => (
-  <Box className="developer-tools-page" py={{ base: 8, md: 14 }}>
+  <Box className="developer-tools-page outlet-page" py={{ base: 8, md: 14 }}>
     <Container maxW="6xl">
       <VStack align="stretch" gap={10}>
         <Box textAlign="center" maxW="2xl" mx="auto">

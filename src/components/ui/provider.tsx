@@ -1,19 +1,34 @@
-import { ChakraProvider, defaultSystem } from '@chakra-ui/react';
-import { ThemeProvider } from 'next-themes';
-import React from 'react';
+import { ChakraProvider, defaultSystem } from "@chakra-ui/react";
+import React, { useEffect, useState } from "react";
 
 export interface ProviderProps {
   children: React.ReactNode;
 }
 
+const getInitialTheme = () => {
+  const storedTheme = window.localStorage.getItem("theme");
+
+  if (storedTheme === "light" || storedTheme === "dark") {
+    return storedTheme;
+  }
+
+  return window.matchMedia("(prefers-color-scheme: dark)").matches
+    ? "dark"
+    : "light";
+};
+
 export function Provider({ children }: ProviderProps) {
-  return (
-    <ChakraProvider value={defaultSystem}>
-      <ThemeProvider attribute="class" disableTransitionOnChange>
-        {children}
-      </ThemeProvider>
-    </ChakraProvider>
-  );
+  const [theme] = useState(getInitialTheme);
+
+  useEffect(() => {
+    const root = document.documentElement;
+
+    root.classList.toggle("dark", theme === "dark");
+    root.classList.toggle("light", theme === "light");
+    root.style.colorScheme = theme;
+  }, [theme]);
+
+  return <ChakraProvider value={defaultSystem}>{children}</ChakraProvider>;
 }
 
 export default Provider;

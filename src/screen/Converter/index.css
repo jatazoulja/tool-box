@@ -1,7 +1,3 @@
-.converter-page {
-  min-height: 100vh;
-  background: #f6f8fc;
-}
 .converter-card {
   transition:
     transform 0.18s ease,

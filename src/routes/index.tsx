@@ -1,6 +1,8 @@
 import React, { Suspense } from "react";
 import { Center, Spinner } from "@chakra-ui/react";
 import { createBrowserRouter, Navigate } from "react-router-dom";
+import DashboardComponentLayout from "@/screen/Dashboard/DashboardComponentLayout";
+import DashboardHome from "@/screen/Dashboard/components/DashboardHome";
 
 const PageLoader = () => (
   <Center minH="100vh">
@@ -17,42 +19,51 @@ const DeveloperToolsCategory = React.lazy(
   () => import("@/screen/DeveloperTools/Category"),
 );
 
-export const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Navigate to="/converter" replace />,
-  },
-  {
-    path: "/converter",
-    element: (
-      <Suspense fallback={<PageLoader />}>
-        <Converter />
-      </Suspense>
-    ),
-  },
-  {
-    path: "/converter/:categoryId",
-    element: (
-      <Suspense fallback={<PageLoader />}>
-        <ConverterCategory />
-      </Suspense>
-    ),
-  },
-  {
-    path: "/developer-tools",
-    element: (
-      <Suspense fallback={<PageLoader />}>
-        <DeveloperTools />
-      </Suspense>
-    ),
-  },
-  {
-    path: "/developer-tools/:categoryId",
-    element: (
-      <Suspense fallback={<PageLoader />}>
-        <DeveloperToolsCategory />
-      </Suspense>
-    ),
-  },
-  { path: "*", element: <Navigate to="/converter" replace /> },
-]);
+export const router = createBrowserRouter(
+  [
+    {
+      element: <DashboardComponentLayout />,
+      children: [
+        {
+          index: true,
+          element: <DashboardHome />,
+        },
+        {
+          path: "converter",
+          element: (
+            <Suspense fallback={<PageLoader />}>
+              <Converter />
+            </Suspense>
+          ),
+        },
+        {
+          path: "converter/:categoryId",
+          element: (
+            <Suspense fallback={<PageLoader />}>
+              <ConverterCategory />
+            </Suspense>
+          ),
+        },
+        {
+          path: "developer-tools",
+          element: (
+            <Suspense fallback={<PageLoader />}>
+              <DeveloperTools />
+            </Suspense>
+          ),
+        },
+        {
+          path: "developer-tools/:categoryId",
+          element: (
+            <Suspense fallback={<PageLoader />}>
+              <DeveloperToolsCategory />
+            </Suspense>
+          ),
+        },
+      ],
+    },
+
+    { path: "*", element: <Navigate to="/converter" replace /> },
+  ],
+  { basename: import.meta.env.BASE_URL.replace(/\/$/, "") },
+);

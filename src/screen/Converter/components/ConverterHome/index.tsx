@@ -13,7 +13,7 @@ import { conversionCategories } from "../../utils/conversion-categories";
 import "./index.css";
 
 export const ConverterHome: React.FC = () => (
-  <Box className="converter-page" py={{ base: 8, md: 14 }}>
+  <Box className="converter-page outlet-page" py={{ base: 24, md: 24 }}>
     <Container maxW="6xl">
       <VStack align="stretch" gap={10}>
         <Box textAlign="center" maxW="2xl" mx="auto">

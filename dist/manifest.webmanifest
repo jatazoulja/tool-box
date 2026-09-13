@@ -2,14 +2,14 @@
   "name": "Converter App",
   "short_name": "Converter",
   "description": "A fast, installable unit conversion app.",
-  "start_url": "/",
-  "scope": "/",
+  "start_url": "/tool-box/",
+  "scope": "/tool-box/",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#0f766e",
   "icons": [
     {
-      "src": "/app-icon.svg",
+      "src": "/tool-box/app-icon.svg",
       "sizes": "any",
       "type": "image/svg+xml",
       "purpose": "any maskable"

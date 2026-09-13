@@ -1,0 +1,1 @@
+import{r as a,j as o}from"./index-DIaS27JM.js";import{S as s}from"./v-stack-CKfPA3bT.js";const c=a.forwardRef(function(r,t){return o.jsx(s,{align:"center",...r,direction:"row",ref:t})});c.displayName="HStack";export{c as H};

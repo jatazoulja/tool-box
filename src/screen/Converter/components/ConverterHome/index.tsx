@@ -46,17 +46,17 @@ export const ConverterHome: React.FC = () => (
               <Link to={`/converter/${category.id}`}>
                 <Box
                   className="converter-card"
-                  bg="bg"
+                  bg="#111a27"
                   borderWidth="1px"
-                  borderColor="border.subtle"
+                  borderColor="#26364b"
                   rounded="xl"
                   p={5}
                   h="full"
                 >
                   <HStack align="start" gap={4}>
                     <Box
-                      bg="blue.50"
-                      color="blue.700"
+                      bg="#162a45"
+                      color="#9ec5ff"
                       rounded="lg"
                       w={10}
                       h={10}
@@ -82,14 +82,14 @@ export const ConverterHome: React.FC = () => (
           ))}
         </Grid>
         <Box
-          bg="orange.50"
+          bg="#2b2418"
           borderLeftWidth="4px"
-          borderColor="orange.400"
+          borderColor="#f59e0b"
           p={5}
           rounded="md"
         >
           <Text fontWeight="semibold">Currency is intentionally separate</Text>
-          <Text color="fg.muted" mt={1}>
+          <Text color="#c6d0dd" mt={1}>
             Exchange rates change continuously, unlike the fixed units above.
             The currency page is reserved for a future rate API integration.
           </Text>

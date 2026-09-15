@@ -23,12 +23,33 @@ import {
   Star,
   WandSparkles,
 } from "lucide-react";
-import React, { useState } from "react";
-import { Link, Outlet } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Link, Outlet, useLocation } from "react-router-dom";
 import "./index.css";
 
 const DashboardComponentLayout: React.FC = () => {
   const [query, setQuery] = useState("");
+  const location = useLocation();
+
+  useEffect(() => {
+    const isDeveloperTools = location.pathname.startsWith("/developer-tools");
+    const isHome = location.pathname === "/";
+    const pageTitle = isHome
+      ? "ToolForge – Free Online Developer Tools, Converters & Utilities"
+      : isDeveloperTools
+        ? "Developer Tools | ToolForge"
+        : "Unit Converter | ToolForge";
+    const description = isHome
+      ? "Free online developer tools, unit converters, text utilities, JSON tools, encoding tools, regex tools, and more. Fast, browser-based utilities for developers and everyday tasks."
+      : isDeveloperTools
+        ? "Browser-based developer tools for formatting, encoding, decoding, and transforming text."
+        : "Convert units with a fast, browser-based converter for everyday development and technical work.";
+
+    document.title = pageTitle;
+    document
+      .querySelector('meta[name="description"]')
+      ?.setAttribute("content", description);
+  }, [location.pathname]);
 
   return (
     <Box className="converter-page outlet-page">
@@ -103,13 +124,13 @@ const DashboardComponentLayout: React.FC = () => {
 
         <VStack className="hero" gap={0}>
           <Text className="eyebrow">The developer utility belt</Text>
-          <Heading className="hero-title">
-            Your everyday developer
-            <br />
-            <span>Swiss army knife.</span>
+          <Heading as="h1" className="hero-title">
+            Free Online Developer Tools &amp; Utilities
           </Heading>
           <Text className="hero-copy">
-            Instant, privacy-focused, offline-first web utilities.
+            ToolForge is a collection of free online tools for developers,
+            programmers, and everyday tasks. Convert units, format JSON, encode
+            text, transform strings, and more.
           </Text>
           <InputGroup
             className="search-box"
@@ -131,9 +152,9 @@ const DashboardComponentLayout: React.FC = () => {
           <HStack className="hero-meta" gap={3}>
             <Text>Recent</Text>
             <Text>Popular</Text>
-            <Text className="meta-chip">JSON Formatter</Text>
-            <Text className="meta-chip">Regex Generator</Text>
-            <Text className="meta-chip">Epoch Converter</Text>
+            <Text className="meta-chip">Pretty-print JSON</Text>
+            <Text className="meta-chip">Base64 encode</Text>
+            <Text className="meta-chip">UUID v4</Text>
           </HStack>
         </VStack>
 

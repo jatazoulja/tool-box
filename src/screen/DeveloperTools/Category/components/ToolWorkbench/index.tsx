@@ -72,9 +72,9 @@ export const ToolWorkbench: React.FC<ToolWorkbenchProps> = ({ category }) => {
             </Text>
           </Box>
           <Box
-            bg="bg"
+            bg="#111a27"
             borderWidth="1px"
-            borderColor="border.subtle"
+            borderColor="#26364b"
             rounded="2xl"
             p={{ base: 5, md: 8 }}
             shadow="sm"
@@ -98,11 +98,11 @@ export const ToolWorkbench: React.FC<ToolWorkbenchProps> = ({ category }) => {
                   ))}
                 </select>
               </label>
-              <Box bg="blue.50" rounded="lg" p={4}>
+              <Box bg="#162a45" rounded="lg" p={4}>
                 <Text fontWeight="semibold">{tool.description}</Text>
                 <Text
                   as="code"
-                  color="blue.800"
+                  color="#b5d0f5"
                   fontSize="sm"
                   display="block"
                   mt={2}

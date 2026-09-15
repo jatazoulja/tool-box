@@ -1,23 +1,30 @@
 .tool-workbench__label {
   display: grid;
   gap: 0.5rem;
-  color: #344054;
-  font-size: 0.875rem;
+  color: #c6d0dd;
+  font-size: 16px;
   font-weight: 600;
 }
 .tool-workbench__label select,
 .tool-workbench__label textarea {
   width: 100%;
-  border: 1px solid #d0d5dd;
+  border: 1px solid #304158;
   border-radius: 0.5rem;
   padding: 0.75rem;
-  background: #fff;
-  color: #101828;
+  background: #111a27;
+  color: #f2f7fb;
   font: inherit;
+  font-size: 16px;
 }
 .tool-workbench__label textarea {
   min-height: 13rem;
   resize: vertical;
   font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-  font-size: 0.875rem;
+}
+
+.tool-workbench__label select:focus,
+.tool-workbench__label textarea:focus {
+  border-color: #69e7b6;
+  outline: 2px solid rgba(105, 231, 182, 0.25);
+  outline-offset: 1px;
 }

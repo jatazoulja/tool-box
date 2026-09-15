@@ -1,12 +1,12 @@
 {
-  "name": "Converter App",
-  "short_name": "Converter",
-  "description": "A fast, installable unit conversion app.",
+  "name": "ToolForge",
+  "short_name": "ToolForge",
+  "description": "Free online developer tools, converters, and browser-based utilities.",
   "start_url": "/tool-box/",
   "scope": "/tool-box/",
   "display": "standalone",
   "background_color": "#ffffff",
-  "theme_color": "#0f766e",
+  "theme_color": "#0f172a",
   "icons": [
     {
       "src": "/tool-box/app-icon.svg",

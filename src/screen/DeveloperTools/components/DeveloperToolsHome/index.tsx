@@ -46,17 +46,17 @@ export const DeveloperToolsHome: React.FC = () => (
               <Link to={`/developer-tools/${category.id}`}>
                 <Box
                   className="developer-tools-card"
-                  bg="bg"
+                  bg="#111a27"
                   borderWidth="1px"
-                  borderColor="border.subtle"
+                  borderColor="#26364b"
                   rounded="xl"
                   p={5}
                   h="full"
                 >
                   <HStack align="start" gap={4}>
                     <Box
-                      bg="blue.50"
-                      color="blue.700"
+                      bg="#162a45"
+                      color="#9ec5ff"
                       rounded="lg"
                       w={10}
                       h={10}

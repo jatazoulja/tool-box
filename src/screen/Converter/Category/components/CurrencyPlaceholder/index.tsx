@@ -16,9 +16,9 @@ export const CurrencyPlaceholder: React.FC = () => (
           <Link to="/converter">&lt;- All converters</Link>
         </Button>
         <Box
-          bg="bg"
+          bg="#111a27"
           borderWidth="1px"
-          borderColor="border.subtle"
+          borderColor="#26364b"
           rounded="2xl"
           p={8}
         >

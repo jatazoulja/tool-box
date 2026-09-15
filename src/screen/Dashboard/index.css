@@ -149,7 +149,7 @@
   box-shadow:
     0 0 0 1px rgba(87, 229, 180, 0.15),
     0 0 24px rgba(71, 218, 166, 0.13);
-  font-size: 12px;
+  font-size: 16px;
 }
 
 .search-box input::placeholder {

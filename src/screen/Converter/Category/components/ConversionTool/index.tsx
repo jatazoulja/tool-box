@@ -64,9 +64,9 @@ export const ConversionTool: React.FC<ConversionToolProps> = ({ category }) => {
             </Text>
           </Box>
           <Box
-            bg="bg"
+            bg="#111a27"
             borderWidth="1px"
-            borderColor="border.subtle"
+            borderColor="#26364b"
             rounded="2xl"
             p={{ base: 5, md: 8 }}
             shadow="sm"
@@ -76,6 +76,7 @@ export const ConversionTool: React.FC<ConversionToolProps> = ({ category }) => {
                 <input
                   aria-label="Amount"
                   type="number"
+                  inputMode="decimal"
                   value={amount}
                   onChange={(event) => setAmount(event.target.value)}
                   className="conversion-tool__input"
@@ -111,14 +112,14 @@ export const ConversionTool: React.FC<ConversionToolProps> = ({ category }) => {
                   />
                 </FormField>
               </Grid>
-              <Box bg="blue.50" borderRadius="xl" p={6}>
-                <Text color="blue.700" fontSize="sm" fontWeight="medium">
+              <Box bg="#162a45" borderRadius="xl" p={6}>
+                <Text color="#9ec5ff" fontSize="sm" fontWeight="medium">
                   RESULT
                 </Text>
-                <Heading size="2xl" color="blue.800" mt={1}>
+                <Heading size="2xl" color="#d6e6ff" mt={1}>
                   {formatValue(result)} {toUnit?.symbol}
                 </Heading>
-                <Text color="blue.700" mt={2}>
+                <Text color="#b5d0f5" mt={2}>
                   {amount || 0} {fromUnit?.symbol} = {formatValue(result)}{" "}
                   {toUnit?.symbol}
                 </Text>

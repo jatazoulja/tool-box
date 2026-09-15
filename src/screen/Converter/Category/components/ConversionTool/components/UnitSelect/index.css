@@ -1,8 +1,15 @@
 .unit-select {
-  background: white;
-  border: 1px solid #cbd5e1;
+  background: #111a27;
+  border: 1px solid #304158;
   border-radius: 0.375rem;
   height: 2.5rem;
   padding: 0 0.75rem;
   width: 100%;
+  color: #f2f7fb;
+  font-size: 16px;
+}
+
+.unit-select option {
+  background: #111a27;
+  color: #f2f7fb;
 }
